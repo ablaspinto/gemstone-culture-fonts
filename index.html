@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Gemstone Culture Fonts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&family=Noto+Sans:wght@400;500&family=Proza+Libre:wght@400;500&family=Roboto:wght@400;500&family=Baskervville&family=Figtree:wght@400;500&family=Inter:wght@400;500;600&family=Bodoni+Moda:wght@400;500&family=Marcellus&family=Cormorant:wght@400;500&family=Instrument+Sans:wght@400;500&family=Instrument+Serif&family=Jost:wght@300;400;500&family=Lato:wght@400;700&family=Libre+Baskerville&family=Montserrat:wght@400;500&family=Playfair+Display&family=Work+Sans:wght@400;500&display=swap">
+<style>
+  /* Layout: the store's own white/black/gold palette; one mini storefront per font pair, stacked on phones. Single light theme on purpose: it previews the store as it looks. */
+  :root {
+    --bg: #FFFFFF;
+    --fg: #000000;
+    --muted: #5C5C5C;
+    --line: #E5E5E5;
+    --gold: #BD956A;
+    --panel: #FAFAFA;
+    --ink: #000000;
+    --on-ink: #FFFFFF;
+    --on-ink-muted: #CFCFCF;
+    --ui: "Instrument Sans", system-ui, sans-serif;
+    color-scheme: light;
+  }
+  body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.5; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 32px; }
+  header.intro { display: grid; gap: 10px; max-width: 62ch; }
+  .eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  header.intro h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(32px, 6vw, 48px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  header.intro p { margin: 0; color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 24px; }
+  .opt { border: 1px solid var(--line); display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+  .opt-head { padding: 16px 18px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; font-family: var(--ui); }
+  .opt-head .tag { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+  .opt-head .tag b { font-weight: 500; color: var(--fg); }
+  .now { background: var(--gold); color: var(--fg); padding: 2px 6px; font-size: 10px; letter-spacing: .1em; }
+  .avail { margin-left: auto; padding: 2px 6px; font-size: 10px; letter-spacing: .1em; border: 1px solid var(--line); color: var(--muted); }
+  .avail.custom { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+  .part { display: grid; gap: 10px; max-width: 62ch; padding-top: 16px; border-top: 1px solid var(--fg); }
+  .part h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(28px, 5vw, 38px); line-height: 1.05; margin: 0; text-wrap: balance; }
+  .part p { margin: 0; color: var(--muted); }
+  .bodygrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+  .bodyopt { border: 1px solid var(--line); padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .bodyopt .sample { font-family: var(--body); display: grid; gap: 6px; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .bodyopt .sample .nm { font-size: 17px; font-weight: 500; }
+  .bodyopt .sample .pr { font-size: 15px; font-variant-numeric: tabular-nums; }
+  .bodyopt .sample .ds { font-size: 14px; line-height: 1.55; }
+  .bodyopt .sample .sz { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .bodyopt .sample .bt { justify-self: start; background: var(--gold); color: var(--fg); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 9px 16px; font-weight: 500; }
+
+  .mix { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; align-items: start; }
+  .mix-form { display: grid; gap: 14px; min-width: 0; }
+  .mix-form label { display: grid; gap: 4px; font-size: 13px; }
+  .mix-form label span { font-weight: 500; }
+  .mix-form label small { color: var(--muted); font-size: 12px; }
+  .mix-form select { font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid var(--fg); background: var(--bg); color: var(--fg); border-radius: 0; }
+  .mix-form select:focus-visible, .copy:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .mix-out { display: grid; gap: 8px; }
+  .mix-out textarea { font: 13px/1.5 var(--ui); padding: 10px 12px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); resize: vertical; min-height: 110px; }
+  .copy { justify-self: start; font: inherit; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 10px 18px; background: var(--fg); color: var(--bg); border: 0; cursor: pointer; }
+  .mix-note { font-size: 12px; color: var(--muted); min-height: 1.2em; }
+  .mix-form textarea#mix-notes { font: 14px/1.5 var(--ui); padding: 10px 12px; border: 1px solid var(--fg); background: var(--bg); color: var(--fg); resize: vertical; min-height: 70px; border-radius: 0; }
+  .mix-form textarea#mix-notes:focus-visible, .send:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .send-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .send { font: inherit; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 10px 18px; background: var(--gold); color: var(--fg); border: 0; cursor: pointer; }
+  .mix-preview { border: 1px solid var(--line); min-width: 0; }
+  .mix-preview .nav { font-family: var(--menu); padding: 14px 18px 12px; margin: 0; }
+  .mix-preview .hero { margin: 0 18px; }
+  .mix-preview .btn { font-family: var(--menu); }
+  .mix-preview .card { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 18px; align-items: start; }
+  .mix-preview .card i { aspect-ratio: 3 / 4; background: var(--panel); border: 1px solid var(--line); }
+  .mix-preview .card .nm { font-family: var(--price); font-size: 16px; }
+  .mix-preview .card .pr { font-family: var(--price); font-size: 15px; font-variant-numeric: tabular-nums; }
+  .mix-preview .card .ds { font-family: var(--body); font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+  .imports { border: 1px solid var(--fg); padding: 20px 18px; display: grid; gap: 12px; max-width: 760px; }
+  .imports h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 28px; margin: 0; }
+  .imports p { margin: 0; color: var(--muted); max-width: 62ch; }
+  .imports dl { margin: 0; display: grid; gap: 12px; }
+  .imports dt { font-weight: 500; }
+  .imports dd { margin: 2px 0 0; color: var(--muted); max-width: 62ch; }
+  .opt-head .pair { font-size: 15px; font-weight: 500; }
+  .opt-head .feel { font-size: 13px; color: var(--muted); }
+  .opt-head .seen { font-size: 12px; color: var(--fg); padding-top: 6px; margin-top: 4px; border-top: 1px dashed var(--line); }
+  .opt-head .live { display: block; margin-top: 4px; color: var(--muted); }
+  .opt-head .live a { color: var(--fg); text-underline-offset: 2px; }
+  .opt-head .live a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .opt-head .seen b { font-weight: 500; letter-spacing: .08em; text-transform: uppercase; font-size: 10px; margin-right: 4px; }
+
+  /* mini storefront */
+  .shop { display: grid; gap: 22px; padding: 18px 18px 22px; font-family: var(--body); }
+  .nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+  .hero { display: grid; gap: 10px; text-align: center; padding: 26px 14px; background: var(--ink); color: var(--on-ink); }
+  .hero h2 { color: var(--gold); font-family: var(--head); font-weight: var(--head-w, 400); font-size: var(--h1, 34px); line-height: 1.08; margin: 0; text-wrap: balance; text-transform: var(--head-case, none); letter-spacing: var(--head-ls, normal); }
+  .hero p { margin: 0 auto; max-width: 32ch; font-size: 14px; color: var(--on-ink-muted); }
+  .btn { justify-self: center; background: var(--gold); color: var(--fg); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 11px 20px; font-weight: 500; }
+  .sec h3 { font-family: var(--head); font-weight: var(--head-w, 400); font-size: var(--h2, 24px); margin: 0 0 10px; text-transform: var(--head-case, none); letter-spacing: var(--head-ls, normal); }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .tile { display: grid; gap: 6px; font-size: 12px; min-width: 0; }
+  .tile i { display: block; aspect-ratio: 3 / 4; background: var(--panel); border: 1px solid var(--line); }
+  .tile span { font-family: var(--head); font-size: var(--tile, 16px); line-height: 1.15; text-transform: var(--head-case, none); letter-spacing: var(--head-ls, normal); }
+  .body-copy { margin: 0; font-size: 14px; }
+
+  .f-a { --head: "Instrument Serif", Georgia, serif; --body: "Instrument Sans", system-ui, sans-serif; }
+  .f-b { --head: "Cormorant", "Times New Roman", serif; --head-w: 500; --body: "Montserrat", system-ui, sans-serif; --h1: 38px; --h2: 27px; --tile: 17px; }
+  .f-c { --head: "Playfair Display", Georgia, serif; --body: "Lato", system-ui, sans-serif; --h1: 31px; --h2: 22px; --tile: 14px; }
+  .f-d { --head: "Libre Baskerville", Georgia, serif; --body: "Work Sans", system-ui, sans-serif; --h1: 27px; --h2: 20px; --tile: 13px; }
+  .f-e { --head: "Jost", system-ui, sans-serif; --head-w: 300; --head-case: uppercase; --head-ls: .08em; --body: "Jost", system-ui, sans-serif; --h1: 26px; --h2: 18px; --tile: 12px; }
+  .f-f { --head: "Bodoni Moda", "Didot", Georgia, serif; --body: "Lato", system-ui, sans-serif; --h1: 30px; --h2: 22px; --tile: 14px; }
+  .f-g { --head: "Baskervville", "Baskerville", Georgia, serif; --body: "Work Sans", system-ui, sans-serif; --h1: 32px; --h2: 23px; --tile: 15px; }
+  .f-h { --head: "Marcellus", "Trajan Pro", Georgia, serif; --head-case: uppercase; --head-ls: .06em; --body: "Montserrat", system-ui, sans-serif; --h1: 25px; --h2: 18px; --tile: 12px; }
+  /* real Avenir only exists on Apple devices; elsewhere the preview falls back to Figtree */
+  .f-i { --head: "Avenir Next", "Avenir", "Figtree", system-ui, sans-serif; --head-w: 500; --body: "Avenir Next", "Avenir", "Figtree", system-ui, sans-serif; --h1: 27px; --h2: 19px; --tile: 13px; }
+  .f-j { --head: "Figtree", system-ui, sans-serif; --head-w: 500; --body: "Figtree", system-ui, sans-serif; --h1: 27px; --h2: 19px; --tile: 13px; }
+  .f-k { --head: "Inter", system-ui, sans-serif; --head-w: 500; --head-ls: -.01em; --body: "Inter", system-ui, sans-serif; --h1: 27px; --h2: 19px; --tile: 13px; }
+  .f-k .nav, .f-k .btn { font-family: "Montserrat", system-ui, sans-serif; }
+
+  footer.note { font-size: 13px; color: var(--muted); max-width: 62ch; display: grid; gap: 6px; }
+  footer.note p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="intro">
+    <span class="eyebrow">Gemstone Culture · Font options</span>
+    <h1>Pick the type for your store</h1>
+    <p>Each card shows the same page from your site in a different font pair: a heading font for titles and a body font for everything else. Each card says whether the font is already in Shopify (a quick switch) or needs a custom import (listed at the bottom). Tell us the letter you like, or scroll down to mix your own.</p>
+  </header>
+
+  <div class="grid">
+    <article class="opt f-a">
+      <div class="opt-head"><span class="tag"><b>Option A</b><span class="now">On the site now</span><span class="avail">In Shopify</span></span><span class="pair">Instrument Serif + Instrument Sans</span><span class="feel">Soft, modern serif. Light and editorial.</span><span class="seen"><b>Usually seen on</b>A newer font, popular with modern fashion and design-studio websites.<span class="live">See it live: <a href="https://www.pdpaola.com" target="_blank" rel="noopener">pdpaola.com</a> (PDPAOLA jewelry)</span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-b">
+      <div class="opt-head"><span class="tag"><b>Option B</b><span class="avail">In Shopify</span></span><span class="pair">Cormorant (Garamond) + Montserrat</span><span class="feel">Classic carved serif, closest to the lettering in your logo.</span><span class="seen"><b>Usually seen on</b>Wedding invitations, luxury stationery and handmade jewelry brands.<span class="live">See it live: <a href="https://kinnstudio.com" target="_blank" rel="noopener">kinnstudio.com</a> · <a href="https://www.sterlingforever.com" target="_blank" rel="noopener">sterlingforever.com</a> · <a href="https://www.astridandmiyu.com" target="_blank" rel="noopener">astridandmiyu.com</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-c">
+      <div class="opt-head"><span class="tag"><b>Option C</b><span class="avail">In Shopify</span></span><span class="pair">Playfair Display + Lato</span><span class="feel">High-contrast fashion serif. Bold and glamorous.</span><span class="seen"><b>Usually seen on</b>Magazine-style headlines, and one of the most common heading fonts on fashion and jewelry online stores.<span class="live">See it live: <a href="https://www.pdpaola.com" target="_blank" rel="noopener">pdpaola.com</a> · <a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-d">
+      <div class="opt-head"><span class="tag"><b>Option D</b><span class="avail">In Shopify</span></span><span class="pair">Libre Baskerville + Work Sans</span><span class="feel">Traditional and sturdy. Very easy to read on phones.</span><span class="seen"><b>Usually seen on</b>Books, news sites and heritage brands. This version was redrawn for reading on screens.<span class="live">See it: <a href="https://fonts.google.com/specimen/Libre+Baskerville" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-e">
+      <div class="opt-head"><span class="tag"><b>Option E</b><span class="avail">In Shopify</span></span><span class="pair">Jost (headings in capitals) + Jost</span><span class="feel">Clean, minimal, all sans-serif. Sporty and modern.</span><span class="seen"><b>Usually seen on</b>Modeled on Futura, the font family behind Louis Vuitton's logo; common on activewear and streetwear sites.<span class="live">Futura, the font it's modeled on, live: <a href="https://www.gorjana.com" target="_blank" rel="noopener">gorjana.com</a> · <a href="https://www.messika.com" target="_blank" rel="noopener">messika.com</a> · <a href="https://www.everlane.com" target="_blank" rel="noopener">everlane.com</a> · Jost itself: <a href="https://fonts.google.com/specimen/Jost" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-f">
+      <div class="opt-head"><span class="tag"><b>Option F</b><span class="avail">In Shopify</span></span><span class="pair">Bodoni Moda + Lato</span><span class="feel">The Didot and Bodoni look of luxury fashion houses. Sharp and dramatic.</span><span class="seen"><b>Usually seen on</b>The Vogue and Harper's Bazaar magazine covers, perfume labels and high-end fashion brands.<span class="live">Didot live: <a href="https://www.vogue.com" target="_blank" rel="noopener">vogue.com</a> · <a href="https://www.davidyurman.com" target="_blank" rel="noopener">davidyurman.com</a> (David Yurman jewelry) · Bodoni Moda: <a href="https://fonts.google.com/specimen/Bodoni+Moda" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-g">
+      <div class="opt-head"><span class="tag"><b>Option G</b><span class="avail">In Shopify</span></span><span class="pair">Baskervville + Work Sans</span><span class="feel">Revival of the original Baskerville, the heritage look of classic jewelers.</span><span class="seen"><b>Usually seen on</b>Fine book printing since the 1750s, and old-world luxury and heritage brands.<span class="live">See it: <a href="https://fonts.google.com/specimen/Baskervville" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-h">
+      <div class="opt-head"><span class="tag"><b>Option H</b><span class="avail">In Shopify</span></span><span class="pair">Marcellus (capitals) + Montserrat</span><span class="feel">Roman, carved-in-stone capitals in the Cinzel style. Timeless and formal.</span><span class="seen"><b>Usually seen on</b>Lettering carved in Roman stone; the same look as Trajan, the font on countless movie posters.<span class="live">See it: <a href="https://fonts.google.com/specimen/Marcellus" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-i">
+      <div class="opt-head"><span class="tag"><b>Option I</b><span class="avail custom">Custom import</span></span><span class="pair">Avenir</span><span class="feel">Smooth, geometric sans-serif. Clean and premium. Shows as true Avenir on iPhone and Mac; other devices show a look-alike here.</span><span class="seen"><b>Usually seen on</b>Designed by Adrian Frutiger in 1988; a favorite of beauty, tech and modern luxury brands.<span class="live">See it live: <a href="https://www.brilliantearth.com" target="_blank" rel="noopener">brilliantearth.com</a> · <a href="https://jenny-bird.ca" target="_blank" rel="noopener">jenny-bird.ca</a> (a Shopify jewelry store that imported Avenir)</span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-j">
+      <div class="opt-head"><span class="tag"><b>Option J</b><span class="avail">In Shopify</span></span><span class="pair">Figtree</span><span class="feel">Shopify's own replacement for Avenir. Nearly the same look, no import or license needed.</span><span class="seen"><b>Usually seen on</b>Modern websites and apps that want the Avenir look for free.<span class="live">See it live: <a href="https://www.sterlingforever.com" target="_blank" rel="noopener">sterlingforever.com</a> · <a href="https://www.abbottlyon.com" target="_blank" rel="noopener">abbottlyon.com</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+
+    <article class="opt f-k">
+      <div class="opt-head"><span class="tag"><b>Option K</b><span class="avail">In Shopify</span></span><span class="pair">Inter + Montserrat (the EVRY Jewels fonts)</span><span class="feel">What evryjewels.com uses: Inter for headings and text, Montserrat for menus and buttons.</span><span class="seen"><b>Usually seen on</b>evryjewels.com, and the text of many apps and tech sites. Montserrat is based on old shop signs in Buenos Aires.<span class="live">See it live: <a href="https://evryjewels.com" target="_blank" rel="noopener">evryjewels.com</a> · <a href="https://dorseyjewelry.com" target="_blank" rel="noopener">dorseyjewelry.com</a> · Inter alone: <a href="https://www.gldn.com" target="_blank" rel="noopener">gldn.com</a></span></span></div>
+      <div class="shop">
+        <nav class="nav"><span>Home</span><span>Shop</span><span>About</span><span>Contact</span></nav>
+        <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+        <div class="sec"><h3>Shop by collection</h3><div class="cols"><div class="tile"><i></i><span>Circle Necklaces</span></div><div class="tile"><i></i><span>Cross Pieces</span></div><div class="tile"><i></i><span>Precious Gems</span></div></div></div>
+        <p class="body-copy">Every piece is made by hand: high quality at a price that lets you build your collection.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="part" aria-labelledby="body-h">
+    <h2 id="body-h">Fonts for body text, prices and checkout</h2>
+    <p>These clean sans-serif fonts go under a fancier heading font: product descriptions, prices, sizing and the cart. They need to be easy to read on a phone.</p>
+  </section>
+
+  <div class="bodygrid">
+    <article class="bodyopt" style="--body: 'Montserrat', system-ui, sans-serif">
+      <div class="opt-head" style="padding:0;border:0"><span class="tag"><b>Montserrat</b><span class="avail">In Shopify</span></span><span class="feel">Geometric and modern. Common for headers and short text.</span><span class="seen"><b>See it live</b><span class="live" style="display:inline"><a href="https://evryjewels.com" target="_blank" rel="noopener">evryjewels.com</a> · <a href="https://dorseyjewelry.com" target="_blank" rel="noopener">dorseyjewelry.com</a></span></span></div>
+      <div class="sample"><span class="nm">Circle Pendant</span><span class="pr">$24.00</span><span class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</span><span class="sz">Chain length: 16 in · 18 in · 20 in</span><span class="bt">Add to cart</span></div>
+    </article>
+    <article class="bodyopt" style="--body: 'Proxima Nova', 'Montserrat', system-ui, sans-serif">
+      <div class="opt-head" style="padding:0;border:0"><span class="tag"><b>Proxima Nova</b><span class="avail custom">Custom import</span></span><span class="feel">Clean and balanced; a favorite of modern luxury and direct-to-consumer brands. Preview shows Montserrat, its closest free match.</span><span class="seen"><b>See it live</b><span class="live" style="display:inline"><a href="https://www.davidyurman.com" target="_blank" rel="noopener">davidyurman.com</a> · <a href="https://www.aloyoga.com" target="_blank" rel="noopener">aloyoga.com</a></span></span></div>
+      <div class="sample"><span class="nm">Circle Pendant</span><span class="pr">$24.00</span><span class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</span><span class="sz">Chain length: 16 in · 18 in · 20 in</span><span class="bt">Add to cart</span></div>
+    </article>
+    <article class="bodyopt" style="--body: 'Helvetica Neue', 'Helvetica', 'Arimo', Arial, sans-serif">
+      <div class="opt-head" style="padding:0;border:0"><span class="tag"><b>Helvetica</b><span class="avail custom">Custom import</span></span><span class="feel">The classic neutral workhorse. Real Helvetica on iPhone and Mac; others see Arimo, a free look-alike that is in Shopify.</span><span class="seen"><b>See it live</b><span class="live" style="display:inline"><a href="https://www.missoma.com" target="_blank" rel="noopener">missoma.com</a> · <a href="https://www.harpersbazaar.com" target="_blank" rel="noopener">harpersbazaar.com</a></span></span></div>
+      <div class="sample"><span class="nm">Circle Pendant</span><span class="pr">$24.00</span><span class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</span><span class="sz">Chain length: 16 in · 18 in · 20 in</span><span class="bt">Add to cart</span></div>
+    </article>
+    <article class="bodyopt" style="--body: 'Roboto', system-ui, sans-serif">
+      <div class="opt-head" style="padding:0;border:0"><span class="tag"><b>Roboto</b><span class="avail">In Shopify</span></span><span class="feel">Neutral and very legible. The standard font on Android phones.</span><span class="seen"><b>See it</b><span class="live" style="display:inline">on any Android phone · <a href="https://fonts.google.com/specimen/Roboto" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="sample"><span class="nm">Circle Pendant</span><span class="pr">$24.00</span><span class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</span><span class="sz">Chain length: 16 in · 18 in · 20 in</span><span class="bt">Add to cart</span></div>
+    </article>
+    <article class="bodyopt" style="--body: 'Noto Sans', system-ui, sans-serif">
+      <div class="opt-head" style="padding:0;border:0"><span class="tag"><b>Noto Sans</b><span class="avail">In Shopify</span></span><span class="feel">Plain and friendly, made to read well in almost every language, including Spanish.</span><span class="seen"><b>See it</b><span class="live" style="display:inline"><a href="https://fonts.google.com/noto/specimen/Noto+Sans" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="sample"><span class="nm">Circle Pendant</span><span class="pr">$24.00</span><span class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</span><span class="sz">Chain length: 16 in · 18 in · 20 in</span><span class="bt">Add to cart</span></div>
+    </article>
+    <article class="bodyopt" style="--body: 'Optima', 'Optima Nova', 'Proza Libre', system-ui, sans-serif">
+      <div class="opt-head" style="padding:0;border:0"><span class="tag"><b>Optima</b><span class="avail custom">Custom import</span></span><span class="feel">Sans-serif with classical, flared strokes. Real Optima on iPhone and Mac; others see Proza Libre, Shopify's own replacement.</span><span class="seen"><b>See it</b><span class="live" style="display:inline">built into iPhone and Mac (pick Optima in Notes or Pages) · Proza Libre: <a href="https://fonts.google.com/specimen/Proza+Libre" target="_blank" rel="noopener">Google Fonts sample</a></span></span></div>
+      <div class="sample"><span class="nm">Circle Pendant</span><span class="pr">$24.00</span><span class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</span><span class="sz">Chain length: 16 in · 18 in · 20 in</span><span class="bt">Add to cart</span></div>
+    </article>
+  </div>
+
+  <section class="part" aria-labelledby="mix-h">
+    <h2 id="mix-h">Would you like to mix fonts?</h2>
+    <p>You don't have to use one of the pairs above. Pick any font from this page for each spot on the site, and the preview updates as you choose. When you're happy, tap "Send my choices": it opens a text or email with your picks already written in. You can also pick one of the ready-made pairs above instead. Fonts marked "custom import" need a license and extra setup (see the list at the bottom).</p>
+  </section>
+
+  <div class="mix">
+    <form class="mix-form" id="mix-form" aria-label="Choose a font for each spot">
+      <label for="pick-pair"><span>Favorite ready-made pair (optional)</span><small>One of options A to K above, if one of them is the look you want</small><select id="pick-pair" data-slot="pair"></select></label>
+      <label for="pick-head"><span>Headings</span><small>Page titles and section titles, such as "Highest quality, nothing less" and "Shop by collection"</small><select id="pick-head" data-slot="head"></select></label>
+      <label for="pick-body"><span>Body text</span><small>Product descriptions, the About Us story and the email signup text</small><select id="pick-body" data-slot="body"></select></label>
+      <label for="pick-menu"><span>Menu and buttons</span><small>Top menu links, "Shop now" and "Add to cart"</small><select id="pick-menu" data-slot="menu"></select></label>
+      <label for="pick-price"><span>Product names and prices</span><small>Under each photo in the shop and on the product page</small><select id="pick-price" data-slot="price"></select></label>
+      <label for="mix-notes"><span>Anything else? (optional)</span><small>For example "I like Option B but bolder" or "use my logo's font"</small><textarea id="mix-notes" data-slot="notes"></textarea></label>
+      <div class="mix-out">
+        <label for="mix-text"><span>Your choices</span></label>
+        <textarea id="mix-text" readonly></textarea>
+        <div class="send-row"><button type="button" class="send" id="send-btn">Send my choices</button><button type="button" class="copy" id="copy-btn">Copy my choices</button></div>
+        <span class="mix-note" id="copy-note" role="status"></span>
+      </div>
+    </form>
+    <div class="mix-preview shop" id="mix-preview" aria-label="Preview of your choices">
+      <nav class="nav"><span>Home</span><span>Jewelry</span><span>About</span><span>Contact</span></nav>
+      <div class="hero"><h2>Highest quality, nothing less</h2><p>Affordable, handmade pieces made to wear every day, and to stack.</p><span class="btn">Shop now</span></div>
+      <div class="card"><i></i><div><div class="nm">Circle Pendant</div><div class="pr">$24.00</div><div class="ds">Handmade pendant on a dainty chain. Wear it alone or stack it with your favorites.</div></div></div>
+    </div>
+  </div>
+
+  <section class="imports" aria-labelledby="imports-h">
+    <h2 id="imports-h">Fonts that need a custom import</h2>
+    <p>Every option marked "In Shopify" is free and switches on in one click. These fonts are not in Shopify's font library, so we would have to upload the font files into the theme and add a little code. Paid fonts also need a web license bought from the font maker.</p>
+    <dl>
+      <div><dt>Avenir / Avenir Next (Option I)</dt><dd>Paid font from Monotype. Shopify removed it from its library. Needs a web license, then a custom import. Free alternative already in Shopify: Figtree (Option J).</dd></div>
+      <div><dt>Didot</dt><dd>Paid font. Needs a web license and a custom import. Free alternative already in Shopify: Bodoni Moda (Option F).</dd></div>
+      <div><dt>Cinzel</dt><dd>Free font, so no license cost, but it still needs a custom import. Alternative already in Shopify: Marcellus (Option H).</dd></div>
+      <div><dt>Quervia</dt><dd>Not in Shopify. Would need a custom import, and its web license terms need checking first.</dd></div>
+      <div><dt>Proxima Nova</dt><dd>Paid font (Mark Simonson Studio). Needs a web license and a custom import. Free alternative already in Shopify: Montserrat.</dd></div>
+      <div><dt>Helvetica</dt><dd>Paid font. Shopify removed it from its library. Needs a web license and a custom import. Free alternative already in Shopify: Arimo, which is nearly identical.</dd></div>
+      <div><dt>Optima</dt><dd>Paid font. Shopify removed it (as Optima Nova) from its library. Needs a web license and a custom import. Free alternative already in Shopify: Proza Libre.</dd></div>
+    </dl>
+  </section>
+
+  <footer class="note">
+    <p>"See it live" sites were checked on October 28, 2026 by reading each site's code. Brands change fonts from time to time, so a site may look different later.</p>
+    <p>Gray boxes stand in for your product photos. Colors match the new site: black bands like your logo, white product areas, gold buttons.</p>
+    <p>If you already have brand fonts from your logo designer, send the font names and we'll use those instead.</p>
+  </footer>
+</div>
+
+<script>
+  // [name, CSS stack, in Shopify?] — custom fonts preview with a local copy or their free look-alike
+  const FONTS = [
+    ['Instrument Serif', '"Instrument Serif", Georgia, serif', true],
+    ['Cormorant (Garamond)', '"Cormorant", "Times New Roman", serif', true],
+    ['Playfair Display', '"Playfair Display", Georgia, serif', true],
+    ['Libre Baskerville', '"Libre Baskerville", Georgia, serif', true],
+    ['Baskervville', '"Baskervville", Georgia, serif', true],
+    ['Bodoni Moda', '"Bodoni Moda", Georgia, serif', true],
+    ['Marcellus', '"Marcellus", Georgia, serif', true],
+    ['Instrument Sans', '"Instrument Sans", system-ui, sans-serif', true],
+    ['Montserrat', '"Montserrat", system-ui, sans-serif', true],
+    ['Inter', '"Inter", system-ui, sans-serif', true],
+    ['Jost', '"Jost", system-ui, sans-serif', true],
+    ['Figtree', '"Figtree", system-ui, sans-serif', true],
+    ['Lato', '"Lato", system-ui, sans-serif', true],
+    ['Work Sans', '"Work Sans", system-ui, sans-serif', true],
+    ['Roboto', '"Roboto", system-ui, sans-serif', true],
+    ['Noto Sans', '"Noto Sans", system-ui, sans-serif', true],
+    ['Avenir', '"Avenir Next", "Avenir", "Figtree", system-ui, sans-serif', false],
+    ['Proxima Nova', '"Proxima Nova", "Montserrat", system-ui, sans-serif', false],
+    ['Helvetica', '"Helvetica Neue", "Helvetica", "Arimo", Arial, sans-serif', false],
+    ['Optima', '"Optima", "Optima Nova", "Proza Libre", system-ui, sans-serif', false],
+  ];
+  const DEFAULTS = { head: 'Instrument Serif', body: 'Instrument Sans', menu: 'Instrument Sans', price: 'Instrument Sans' };
+  const LABELS = { head: 'Headings (page and section titles)', body: 'Body text (descriptions, About story)', menu: 'Menu and buttons', price: 'Product names and prices' };
+  const form = document.getElementById('mix-form');
+  const preview = document.getElementById('mix-preview');
+  const out = document.getElementById('mix-text');
+  const PAIRS = ['A: Instrument Serif + Instrument Sans', 'B: Cormorant + Montserrat', 'C: Playfair Display + Lato', 'D: Libre Baskerville + Work Sans', 'E: Jost', 'F: Bodoni Moda + Lato', 'G: Baskervville + Work Sans', 'H: Marcellus + Montserrat', 'I: Avenir (custom import)', 'J: Figtree', 'K: Inter + Montserrat'];
+  const selects = [...form.querySelectorAll('select')].filter(s => s.dataset.slot !== 'pair');
+  const pairSel = document.getElementById('pick-pair');
+  const notes = document.getElementById('mix-notes');
+  pairSel.add(new Option('No preference, I mixed my own below', ''));
+  for (const p of PAIRS) pairSel.add(new Option('Option ' + p, p));
+
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('gc-font-mix') || '{}'); } catch (e) {}
+
+  for (const sel of selects) {
+    for (const [name, , ok] of FONTS) sel.add(new Option(ok ? name : name + ' (custom import)', name));
+    sel.value = saved[sel.dataset.slot] || DEFAULTS[sel.dataset.slot];
+  }
+  pairSel.value = saved.pair || '';
+  notes.value = saved.notes || '';
+
+  function update() {
+    const pick = {};
+    for (const sel of selects) {
+      pick[sel.dataset.slot] = sel.value;
+      preview.style.setProperty('--' + sel.dataset.slot, FONTS.find(f => f[0] === sel.value)[1]);
+    }
+    pick.pair = pairSel.value; pick.notes = notes.value.trim();
+    out.value = 'My font choices for Gemstone Culture:\n' + (pick.pair ? '- Favorite pair: Option ' + pick.pair + '\n' : '') + Object.keys(LABELS).map(k => '- ' + LABELS[k] + ': ' + pick[k]).join('\n') + (pick.notes ? '\n- Notes: ' + pick.notes : '');
+    current = pick;
+    try { localStorage.setItem('gc-font-mix', JSON.stringify(pick)); } catch (e) {}
+  }
+  let current = {};
+  form.addEventListener('change', update);
+  notes.addEventListener('input', update);
+  update();
+
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    const note = document.getElementById('copy-note');
+    navigator.clipboard.writeText(out.value)
+      .then(() => { note.textContent = 'Copied. Paste it into a message to us.'; })
+      .catch(() => { out.focus(); out.select(); note.textContent = 'Text selected. Copy it with your phone or keyboard, then paste it into a message.'; });
+  });
+
+  // Send: opens the phone's share sheet (text, WhatsApp, email), or an email draft on a computer. Works for anyone with the link.
+  document.getElementById('send-btn').addEventListener('click', async () => {
+    const note = document.getElementById('copy-note');
+    try {
+      if (navigator.share) { await navigator.share({ title: 'Gemstone Culture font choices', text: out.value }); note.textContent = 'Sent. Thank you!'; return; }
+    } catch (e) { if (e.name === 'AbortError') return; }
+    location.href = 'mailto:?subject=' + encodeURIComponent('Gemstone Culture font choices') + '&body=' + encodeURIComponent(out.value);
+    note.textContent = 'Your email app should open with your choices. If it does not, use "Copy my choices".';
+  });
+</script>
+
+</body>
+</html>
